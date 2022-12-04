@@ -50,8 +50,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: SingleChildScrollView(
+      body: SingleChildScrollView(
         // <-- Berfungsi Untuk  Bisa Scroll
         child: SafeArea(
           // < -- Biar Gak Keluar Area Screen HP
@@ -75,7 +74,7 @@ class _LoginState extends State<Login> {
                     // color: Color.fromARGB(255, 15, 147, 59),
                     opacity: const AlwaysStoppedAnimation<double>(0.8)),
 
-                SizedBox(height: 50), // <-- Kasih Jarak Tinggi : 50px
+                SizedBox(height: 20), // <-- Kasih Jarak Tinggi : 50px
                 Center(
                   child: Form(
                     key: _fbKey,
@@ -84,34 +83,44 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: [
                           FormBuilderTextField(
-                            name: "email",
-                            controller: emailController,
-                            decoration: InputDecoration(
+                              name: "email",
+                              controller: emailController,
+                              decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 10),
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         width: 2, color: Colors.blueAccent)),
                                 //border: OutlineInputBorder(),
                                 prefixIcon: Icon(Icons.email_outlined),
-                                labelText: "Email"),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
+                                labelText: "Email",
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Nunito',
+                                    fontSize: 15,
+                                    color: Colors.blueGrey),
+                              ),
+                              style: TextStyle(
+                                  fontFamily: 'Nunito', fontSize: 13)),
+                          SizedBox(height: 20),
                           FormBuilderTextField(
-                            obscureText:
-                                true, // <-- Buat bikin setiap inputan jadi bintang " * "
-                            name: "password",
-                            controller: passwordController,
-                            decoration: InputDecoration(
+                              obscureText:
+                                  true, // <-- Buat bikin setiap inputan jadi bintang " * "
+                              name: "password",
+                              controller: passwordController,
+                              decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 10),
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         width: 2, color: Colors.blueAccent)),
                                 //border: OutlineInputBorder(),
                                 prefixIcon: Icon(Icons.password_outlined),
-                                labelText: "Password"),
-                          ),
+                                labelText: "Password",
+                                labelStyle: TextStyle(
+                                    fontFamily: 'Nunito',
+                                    fontSize: 15,
+                                    color: Colors.blueGrey),
+                              ),
+                              style: TextStyle(
+                                  fontFamily: 'Nunito', fontSize: 13)),
                           SizedBox(
                             height: 30,
                           ),
@@ -200,6 +209,6 @@ class _LoginState extends State<Login> {
           ),
         ),
       ),
-    ));
+    );
   }
 }

@@ -123,16 +123,24 @@ class _MainScreensState extends State<MainScreens> {
         child: SafeArea(
           // < -- Biar Gak Keluar Area Screen HP
           child: Container(
+            decoration: BoxDecoration(
+                border: Border(
+                    top: BorderSide(
+                        width: 10.0, color: Colors.lightBlue.shade900),
+                    bottom: BorderSide(
+                        width: 10.0, color: Colors.lightBlue.shade900),
+                    right: BorderSide(
+                        width: 10.0, color: Colors.lightBlue.shade600),
+                    left: BorderSide(
+                        width: 10.0, color: Colors.lightBlue.shade600))),
             child: Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment
-                      .center, // <-- Berfungsi untuk  atur nilai X jadi tengah
+              padding: const EdgeInsets.only(left: 50.0, right: 50.0),
+              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  // <-- Berfungsi untuk  atur nilai X jadi tengah
                   children: [
                     SizedBox(
                       height: 40,
                     ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

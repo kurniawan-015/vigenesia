@@ -49,73 +49,105 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Center(
+        body: SingleChildScrollView(
+            // <-- Berfungsi Untuk  Bisa Scroll
+            child: SafeArea(
+                // < -- Biar Gak Keluar Area Screen HP
+                child: Container(
+      height: MediaQuery.of(context).size.height,
+      decoration: BoxDecoration(
+          border: Border(
+              top: BorderSide(width: 10.0, color: Colors.lightBlue.shade900),
+              bottom: BorderSide(width: 10.0, color: Colors.lightBlue.shade900),
+              right: BorderSide(width: 10.0, color: Colors.lightBlue.shade600),
+              left: BorderSide(width: 10.0, color: Colors.lightBlue.shade600))),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+          Widget>[
+        Image.asset('assets/images/registration.png',
+            height: 150,
+            // color: Color.fromARGB(255, 15, 147, 59),
+            opacity: const AlwaysStoppedAnimation<double>(1)),
+        SizedBox(height: 10),
+        Center(
+          child: Form(
             child: Container(
-              width: MediaQuery.of(context).size.width / 1.3,
-              height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                  border: Border(
-                      top: BorderSide(
-                          width: 10.0, color: Colors.lightBlue.shade900),
-                      bottom: BorderSide(
-                          width: 10.0, color: Colors.lightBlue.shade900),
-                      right: BorderSide(
-                          width: 10.0, color: Colors.lightBlue.shade600),
-                      left: BorderSide(
-                          width: 10.0, color: Colors.lightBlue.shade600))),
+              width: MediaQuery.of(context).size.width / 1.5,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Register Your Account",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-                  ),
-                  SizedBox(height: 50),
                   FormBuilderTextField(
-                    name: "name",
-                    controller: nameController,
-                    decoration: InputDecoration(
+                      name: "name",
+                      controller: nameController,
+                      decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 10),
-                        border: OutlineInputBorder(),
-                        labelText: "Nama"),
-                  ),
-                  SizedBox(height: 20),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 2, color: Colors.blueAccent)),
+                        //border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.people_alt_outlined),
+                        labelText: "Name",
+                        labelStyle: TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 15,
+                            color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(fontFamily: 'Nunito', fontSize: 13)),
+                  SizedBox(height: 10),
                   FormBuilderTextField(
-                    name: "profesi",
-                    controller: profesiController,
-                    decoration: InputDecoration(
+                      name: "profesi",
+                      controller: profesiController,
+                      decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 10),
-                        border: OutlineInputBorder(),
-                        labelText: "Profesi"),
-                  ),
-                  SizedBox(height: 20),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 2, color: Colors.blueAccent)),
+                        //border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.work_history_outlined),
+                        labelText: "Profession",
+                        labelStyle: TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 15,
+                            color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(fontFamily: 'Nunito', fontSize: 13)),
+                  SizedBox(height: 10),
                   FormBuilderTextField(
-                    name: "email",
-                    controller: emailController,
-                    decoration: InputDecoration(
+                      name: "email",
+                      controller: emailController,
+                      decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 10),
-                        border: OutlineInputBorder(),
-                        labelText: "Email"),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 2, color: Colors.blueAccent)),
+                        //border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.email_outlined),
+                        labelText: "Email",
+                        labelStyle: TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 15,
+                            color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(fontFamily: 'Nunito', fontSize: 13)),
+                  SizedBox(height: 10),
                   FormBuilderTextField(
-                    obscureText:
-                        true, // <-- Buat bikin setiap inputan jadi bintang " * "
-                    name: "password",
-                    controller: passwordController,
-
-                    decoration: InputDecoration(
+                      obscureText:
+                          true, // <-- Buat bikin setiap inputan jadi bintang " * "
+                      name: "password",
+                      controller: passwordController,
+                      decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 10),
-                        border: OutlineInputBorder(),
-                        labelText: "Password"),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 2, color: Colors.blueAccent)),
+                        //border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.password_outlined),
+                        labelText: "Password",
+                        labelStyle: TextStyle(
+                            fontFamily: 'Nunito',
+                            fontSize: 15,
+                            color: Colors.blueGrey),
+                      ),
+                      style: TextStyle(fontFamily: 'Nunito', fontSize: 13)),
+                  SizedBox(height: 30),
                   Container(
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
@@ -152,14 +184,14 @@ class _RegisterState extends State<Register> {
                                       }
                                   });
                         },
-                        child: Text("Daftar")),
+                        child: Text("Create")),
                   ),
                 ],
               ),
             ),
           ),
         ),
-      ),
-    );
+      ]),
+    ))));
   }
 }
