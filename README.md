@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+Kelompok 12 :
+1. Muhammad Ikhsan 12200731
+2. Robby Akhroman 12200614
+3. Febi Tania 12200054
+4. Muhammad Arya Nugraha 12200930
+5. Triyanto Kurniawan 12200015
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
